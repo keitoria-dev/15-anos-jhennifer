@@ -1,0 +1,467 @@
+@charset "UTF-8";
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html, body{
+
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    background:black;
+}
+
+#videoAbertura{
+    
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter: contrast(1.05)
+            saturate(1.08)
+            brightness(1.02);
+
+}
+
+#abertura{
+
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:black;
+    display: none;
+
+}
+
+
+#videoAbertura{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+#telaInicial{
+
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+
+}
+
+#telaInicial h1{
+
+    color:rgb(91, 185, 248);
+    font-size:3rem;
+    margin-bottom:30px;
+    
+
+}
+
+#btnIniciar{
+
+    padding:18px 45px;
+    font-size:1.2rem;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#2c2ec4,#7addf6);
+    transition:.3s;
+
+}
+
+#btnIniciar:hover{
+
+    transform:scale(1.05);
+
+}
+
+#envelopeTela{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    background:#020202;
+    overflow:hidden;
+    opacity:0;
+    visibility:hidden;
+
+    transition:1.5s;
+
+}
+
+#envelopeTela.ativo{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+#envelopeTela::before{
+
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+
+    radial-gradient(circle,#f8cf5d 1.5px,transparent 2px),
+    radial-gradient(circle,#ffffff 1px,transparent 2px),
+    radial-gradient(circle,#FFE9A5 2px,transparent 3px);
+
+    background-size:
+    180px 180px,
+    250px 250px,
+    320px 320px;
+
+    animation: brilho 6s linear infinite;
+
+    opacity: .8;
+
+}
+
+@keyframes brilho{
+
+    0%{
+
+        opacity:.25;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:.25;
+
+    }
+
+}
+
+
+
+.envelope{
+
+    position:relative;
+
+    width:420px;
+    height:270px;
+
+}
+
+.parte{
+
+    position:absolute;
+
+    background:#102B73;
+
+    border:2px solid #D4AF37;
+
+}
+
+.baixo{
+
+    inset:0;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        145deg,
+        #173A8C,
+        #102B73,
+        #091A47
+    );
+
+}
+
+.esquerda{
+
+    width:50%;
+    height:100%;
+
+    left:0;
+
+    clip-path:polygon(
+        0 0,
+        100% 50%,
+        0 100%
+    );
+
+    background:#0D235C;
+
+    border:none;
+
+}
+
+.direita{
+
+    width:50%;
+    height:100%;
+
+    right:0;
+
+    clip-path:polygon(
+        100% 0,
+        0 50%,
+        100% 100%
+    );
+
+    background:#0D235C;
+
+    border:none;
+
+}
+
+.cima{
+
+    width:100%;
+    height:52%;
+
+    top:0;
+
+    clip-path:polygon(
+        0 0,
+        50% 100%,
+        100% 0
+    );
+
+    background:#20459E;
+
+    border:none;
+
+    z-index:5;
+
+    transform-origin:top;
+
+}
+
+.corpo{
+
+    position:absolute;
+    bottom:0;
+
+    width:100%;
+    height:180px;
+
+    background:
+    linear-gradient(
+    160deg,
+    #173A8C 0%,
+    #102B73 40%,
+    #091A47 100%
+    );
+
+    border:2px solid #D4AF37;
+
+    border-radius:0 0 15px 15px;
+
+    box-shadow:
+    0 0 25px rgba(0,0,0,.6),
+    inset 0 0 15px rgba(255,255,255,.08);
+
+}
+
+.tampa{
+
+    position:absolute;
+
+    top:0;
+
+    width:100%;
+    height:110px;
+
+    background:
+    linear-gradient(
+    160deg,
+    #20459E,
+    #102B73,
+    #091A47
+    );
+
+    border:2px solid #D4AF37;
+    border-bottom:none;
+
+    clip-path:polygon(
+        0 100%,
+        50% 0,
+        100% 100%
+    );
+
+    transform-origin:top center;
+
+    transition:1.3s;
+
+    z-index:5;
+
+}
+
+.selo{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%) scale(1);
+
+    width:72px;
+    height:72px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle at 30% 30%,
+    #F8E9A0,
+    #C89A18,
+    #8A6510);
+
+    border:2px solid #FFE8A8;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    transition:
+    transform .35s,
+    box-shadow .35s;
+
+    box-shadow:
+    0 0 18px rgba(212,175,55,.45);
+
+}
+
+.selo:hover{
+
+    transform:
+    translate(-50%,-50%)
+    scale(1.08);
+
+    box-shadow:
+    0 0 30px rgba(255,220,120,.8);
+
+}
+
+#envelopeTela p{
+
+    color:white;
+
+    margin-top:35px;
+
+    font-size:1.2rem;
+
+    letter-spacing:2px;
+
+}
+
+.fumaca{
+
+    position:absolute;
+
+    bottom:-180px;
+
+    width:160%;
+
+    height:500px;
+
+    left:-30%;
+
+    background:
+
+    radial-gradient(circle,
+    rgba(38,115,255,.35) 0%,
+    rgba(30,90,200,.18) 35%,
+    transparent 70%);
+
+    filter:blur(120px);
+
+    animation:fumaca 12s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes fumaca{
+
+    0%{
+
+        transform:
+        translateX(-80px)
+        translateY(50px)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translateX(60px)
+        translateY(-10px)
+        scale(1.15);
+
+    }
+
+    100%{
+
+        transform:
+        translateX(-20px)
+        translateY(40px)
+        scale(.95);
+
+    }
+
+}
+
+/*animação pra carta abrir*/
+
+.cima{
+
+    transition:1.2s;
+
+    transform-origin:top center;
+
+}
+
+
+.envelope.aberto .cima{
+
+    transform:
+    rotateX(180deg);
+
+}
+
+
+
+.envelope.aberto .selo{
+
+    opacity:0;
+
+    transform:
+    translate(-50%,-50%)
+    scale(.2);
+
+}

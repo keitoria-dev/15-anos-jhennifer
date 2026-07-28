@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Presentes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+}
+
+/* =================== FUNDO =================== */
+
+#presentes{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+    overflow:hidden;
+    background:linear-gradient(180deg,#020f2c,#082659,#061938);
+}
+
+/* Estrelas */
+
+.stars{
+    position:absolute;
+    inset:0;
+}
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite ease-in-out;
+}
+
+.star:nth-child(2n){
+    background:#ffe48c;
+}
+
+.star:nth-child(3n){
+    width:5px;
+    height:5px;
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.8);
+        box-shadow:0 0 15px white;
+    }
+
+}
+
+/* =================== CONTAINER =================== */
+
+.container{
+    position:relative;
+    z-index:2;
+    max-width:1100px;
+    width:100%;
+    text-align:center;
+}
+
+h1{
+
+    font-family:'Cinzel',serif;
+    color:#ffd76a;
+    font-size:60px;
+    margin-bottom:20px;
+    text-shadow:0 0 15px rgba(255,215,0,.8);
+
+}
+
+.descricao{
+
+    color:white;
+    font-size:19px;
+    line-height:1.8;
+    margin-bottom:45px;
+
+}
+
+/* =================== CARDS =================== */
+
+.cards{
+
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+
+}
+
+.card{
+
+    width:360px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,215,0,.4);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 0 30px rgba(255,215,0,.15);
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+    box-shadow:0 0 35px rgba(255,215,0,.35);
+
+}
+
+.card h2{
+
+    color:#ffd76a;
+    margin-bottom:20px;
+    font-family:'Cinzel',serif;
+
+}
+
+.card ul{
+
+    list-style:none;
+
+}
+
+.card li{
+
+    color:white;
+    margin:15px 0;
+    font-size:18px;
+
+}
+
+/* =================== PIX =================== */
+
+input{
+
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    text-align:center;
+    font-size:18px;
+    margin:15px 0;
+
+}
+
+.nome{
+
+    color:white;
+    margin-bottom:20px;
+
+}
+
+button{
+
+    border:none;
+    cursor:pointer;
+    padding:15px 28px;
+    border-radius:40px;
+    background:linear-gradient(45deg,#d4af37,#ffe38a);
+    font-size:17px;
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.08);
+    box-shadow:0 0 20px gold;
+
+}
+
+/* =================== TEXTO =================== */
+
+.mensagem{
+
+    color:white;
+    margin:50px auto;
+    line-height:1.8;
+    max-width:700px;
+
+}
+
+/* =================== BOTÃO VOLTAR =================== */
+
+.voltar{
+
+    display:inline-block;
+    margin-top:15px;
+    text-decoration:none;
+    color:#03152f;
+    background:linear-gradient(#ffe38a,#d4af37);
+    padding:18px 35px;
+    border-radius:40px;
+    transition:.3s;
+    font-weight:bold;
+
+}
+
+.voltar:hover{
+
+    transform:scale(1.08);
+    box-shadow:0 0 25px gold;
+
+}
+
+/* =================== RESPONSIVO =================== */
+
+@media(max-width:800px){
+
+    h1{
+        font-size:42px;
+    }
+
+    .descricao{
+        font-size:17px;
+    }
+
+    .card{
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+<body>
+
+<section id="presentes">
+
+<div class="stars" id="stars"></div>
+
+<div class="container">
+
+<h1>👑 Presentes</h1>
+
+<p class="descricao">
+Sua presença já é o maior presente que eu poderia receber! 💙
+<br><br>
+Mas, caso queira me presentear, deixei algumas sugestões abaixo com muito carinho.
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>🎁 Sugestões</h2>
+
+<ul>
+
+<li>💄 Maquiagens</li>
+<li>🌸 Perfumes</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>💙 PIX</h2>
+
+<p style="color:white;">CPF</p>
+
+<input
+id="pix"
+readonly
+value="630.813.603-40">
+
+<p class="nome">
+Jhennifer Clemente da Silva Menezes
+</p>
+
+<button onclick="copiarPix()">
+✨ Copiar chave PIX
+</button>
+
+</div>
+
+</div>
+
+<p class="mensagem">
+
+Cada gesto de carinho torna este momento ainda mais especial.<br>
+Obrigada por fazer parte dos meus 15 anos.<br>
+Espero celebrar esse sonho com você! ✨👑
+
+</p>
+
+<a class="voltar" href="convite.html">
+
+        ← Voltar ao convite
+
+</a>
+
+</div>
+
+</section>
+
+<script>
+
+/* Copiar PIX */
+
+function copiarPix(){
+
+    const pix=document.getElementById("pix");
+
+    navigator.clipboard.writeText(pix.value);
+
+    alert("✨ Chave PIX copiada!");
+
+}
+
+/* Criar estrelas */
+
+const estrelas=document.getElementById("stars");
+
+for(let i=0;i<170;i++){
+
+    const star=document.createElement("span");
+
+    star.classList.add("star");
+
+    star.style.left=Math.random()*100+"%";
+
+    star.style.top=Math.random()*100+"%";
+
+    star.style.animationDelay=Math.random()*3+"s";
+
+    star.style.animationDuration=(2+Math.random()*4)+"s";
+
+    estrelas.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local da Festa</title>
+
+    <link rel="stylesheet" href="style-endereco.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="estrelas"></div>
+
+<div class="fumaca"></div>
+
+<div class="container">
+
+    <h1>📍 LOCAL DA FESTA</h1>
+
+    <h2>Paso Fino</h2>
+
+    <p>
+
+        Rua Jacaúna, 285 <br>
+        Barra do Ceará <br>
+        Fortaleza - CE
+
+    </p>
+
+    <p class="texto">
+
+        Será uma alegria compartilhar esse momento tão especial com você.
+        Esperamos sua presença!
+
+    </p>
+
+    <a
+    class="botao"
+    href="https://maps.app.goo.gl/MXB8q9gfTGv76Nu47"
+    target="_blank">
+
+        Abrir no Google Maps
+
+    </a>
+
+    <a class="voltar" href="convite.html">
+
+        ← Voltar ao convite
+
+    </a>
+
+</div>
+
+<script>
+
+const estrelas=document.getElementById("estrelas");
+
+for(let i=0;i<120;i++){
+
+const e=document.createElement("div");
+
+e.className="estrela";
+
+e.style.left=Math.random()*100+"vw";
+
+e.style.top=Math.random()*100+"vh";
+
+e.style.animationDuration=(2+Math.random()*5)+"s";
+
+e.style.animationDelay=Math.random()*4+"s";
+
+estrelas.appendChild(e);
+
+}
+
+</script>
+
+</body>
+
+</html>
