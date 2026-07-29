@@ -1,42 +1,362 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>Convite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style-convite.css">
+<title>15 Anos Jhennifer</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+h1{
+
+    font-family:'Cinzel',serif;
+
+    font-size:clamp(2.4rem,5vw,4.5rem);
+
+    color:#d4af37;
+
+    margin-bottom:5px;
+
+}
+
+p{
+
+    color:white;
+
+    font-size:clamp(1rem,2.2vw,1.8rem);
+
+    line-height:1.45;
+
+}
+
+.data{
+
+    font-family:'Cinzel',serif;
+
+    font-size:clamp(1.5rem,3vw,2.6rem);
+
+    color:#d4af37;
+
+}
+
+.menu a{
+    font-size:clamp(1.1rem,3vw,1.5rem);
+}
+
+body{
+
+    margin:0;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:15px;
+
+    overflow:hidden;
+
+    background:linear-gradient(180deg,#020d28,#082b63,#04152d);
+
+    font-family:'Cormorant Garamond',serif;
+
+    position:relative;
+
+}
+
+.container{
+
+    position:relative;
+    z-index:2;
+
+    width:min(850px,92vw);
+
+    padding:35px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(8px);
+
+    border:1px solid rgba(212,175,55,.45);
+
+    border-radius:28px;
+
+    box-shadow:
+    0 0 35px rgba(0,0,0,.45);
+
+}
+
+.divisor{
+
+    color:#d4af37;
+
+    font-size:18px;
+
+    margin:14px 0;
+
+    letter-spacing:10px;
+
+}
+
+.clique{
+
+    margin-top:25px;
+    margin-bottom:18px;
+
+    color:#d4af37;
+
+    font-size:clamp(1rem,2vw,1.5rem);
+
+    font-style:italic;
+
+}
+
+.menu{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.menu a{
+
+    width:100%;
+    max-width:360px;
+
+    margin:auto;
+
+    padding:14px;
+
+    background:rgba(212,175,55,.10);
+
+    border:2px solid rgba(212,175,55,.45);
+
+    border-radius:15px;
+
+    color:#f7e7a6;
+
+    text-decoration:none;
+
+    font-family:'Cinzel',serif;
+
+    font-size:clamp(1rem,2vw,1.35rem);
+
+    transition:.35s;
+
+}
+
+.menu a:hover{
+
+    background:rgba(212,175,55,.18);
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 18px rgba(212,175,55,.5);
+
+}
+
+/* ==========================
+   ESTRELAS
+========================== */
+
+#estrelas{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+}
+
+.estrela{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 8px white,
+        0 0 15px white;
+
+    animation:piscar infinite ease-in-out;
+}
+
+@keyframes piscar{
+
+    0%,100%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(2);
+    }
+
+}
+
+/* ==========================
+   FUMAÇA
+========================== */
+
+.fumaca{
+
+    position:fixed;
+
+    inset:-150px;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.08), transparent 35%),
+        radial-gradient(circle at 80% 40%, rgba(255,255,255,.06), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(255,255,255,.05), transparent 35%);
+
+    filter:blur(70px);
+
+    animation:fumaca 18s linear infinite alternate;
+
+    z-index:0;
+
+    pointer-events:none;
+}
+
+@keyframes fumaca{
+
+    from{
+        transform:translate(-50px,-30px);
+    }
+
+    to{
+        transform:translate(50px,30px);
+    }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <div class="convite">
+<div id="estrelas"></div>
 
-    <img src="imagens/convite.png" alt="Convite">
+<div class="fumaca"></div>
 
+<div class="container">
 
-    <a class="btn endereco"
-       href="endereco.html"></a>
+<div class="coroa">👑</div>
 
-    <a class="btn presente"
-       href="presentes.html"></a>
+<h1>15 Anos Jhennifer</h1>
 
-    <a class="btn roupa"
-       href="dresscode.html"></a>
+<div class="divisor">
+    ✦ ❈ ✦
+</div>
 
+<p>
+
+Uma noite única, mágica e inesquecível está prestes a acontecer.
+
+</p>
+
+<div class="divisor">
+    ✦ ❈ ✦
+</div>
+
+<div class="data">
+
+25 DE SETEMBRO • 20H
+
+</div>
+
+<div class="divisor">
+    ✦ ❈ ✦
+</div>
+
+<p>
+
+Sua presença tornará esse sonho ainda mais especial!
+
+</p>
+
+<div class="menu">
+
+<p class="clique">
+
+Clique em uma das opções abaixo para saber mais
+
+</p>
+
+<a href="endereco.html">
+📍 Endereço
+</a>
+
+<a href="presentes.html">
+🎁 Ideias de Presente
+</a>
+
+<a href="dresscode.html">
+👗 Estilo de traje
+</a>
 
 </div>
 
 </div>
 
-<script src="script-convite.js"></script>
+<footer class="rodape">
+    <svg viewBox="0 0 1200 180" preserveAspectRatio="none">
+        <path d="M0 180
+                 L80 180 L80 120 L100 120 L100 80 L120 80 L120 120 L140 120 L140 180
+                 L250 180 L250 90 L280 90 L280 40 L300 40 L300 90 L330 90 L330 180
+                 L500 180 L500 60 L530 60 L530 20 L550 20 L550 60 L580 60 L580 180
+                 L700 180 L700 100 L720 100 L720 70 L740 70 L740 100 L760 100 L760 180
+                 L900 180 L900 80 L930 80 L930 30 L950 30 L950 80 L980 80 L980 180
+                 L1200 180 Z"/>
+    </svg>
+</footer>
+
+<script>
+
+const estrelas=document.getElementById("estrelas");
+
+for(let i=0;i<170;i++){
+
+const e=document.createElement("div");
+
+e.className="estrela";
+
+e.style.left=Math.random()*100+"vw";
+
+e.style.top=Math.random()*100+"vh";
+
+e.style.animationDuration=(2+Math.random()*4)+"s";
+
+e.style.animationDelay=Math.random()*4+"s";
+
+estrelas.appendChild(e);
+
+}
+
+</script>
 
 </body>
+
 </html>

@@ -1,87 +1,404 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus 15 anos</title>
-    <link rel="shortcut icon" href="favicon_io/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dress Code</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
     margin:0;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px 0;
+
     overflow-x:hidden;
-    background:#061938;
+
+    background:linear-gradient(180deg,#020f2c,#082b63,#04152d);
+
+    position:relative;
 }
 
-.dresscode{
-    position: relative;
-    width: fit-content;
-    margin: auto;
+/* ESTRELAS */
+
+#estrelas{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
 }
 
-.dresscode img{
-    width: 100%;
-    max-width: 600px;
-    display: block;
-}
+.estrela{
 
-.btn-voltar{
-    position: absolute;
+    position:absolute;
+    width:3px;
+    height:3px;
 
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
+    background:white;
 
-    background: linear-gradient(45deg,#d4af37,#ffe38a);
-    color:#071B3A;
+    border-radius:50%;
 
-    text-decoration:none;
-    font-family:'Poppins',sans-serif;
-    font-weight:600;
+    box-shadow:
+    0 0 8px white,
+    0 0 15px white;
 
-    padding:14px 28px;
-    border-radius:40px;
-
-    box-shadow:0 0 20px rgba(255,215,0,.6);
-
-    transition:.3s;
-}
-
-.btn-voltar:hover{
-
-    transform:translateX(-50%) scale(1.08);
-
-    box-shadow:0 0 30px gold;
+    animation:piscar infinite ease-in-out;
 
 }
 
-img{
+@keyframes piscar{
 
-    width:100vw;
-    height:100vh;
+    0%,100%{
 
-    object-fit:cover;
+        opacity:.2;
+        transform:scale(.7);
+
+    }
+
+    50%{
+
+        opacity:1;
+        transform:scale(1.8);
+
+    }
 
 }
-    </style>
+
+/* FUMAÇA */
+
+.fumaca{
+
+    position:fixed;
+
+    inset:-150px;
+
+    background:
+    radial-gradient(circle at 20% 40%,rgba(255,255,255,.08),transparent 35%),
+    radial-gradient(circle at 80% 20%,rgba(255,255,255,.05),transparent 40%),
+    radial-gradient(circle at 50% 80%,rgba(255,255,255,.06),transparent 35%);
+
+    filter:blur(60px);
+
+    animation:fumaca 18s linear infinite alternate;
+
+    z-index:0;
+
+}
+
+@keyframes fumaca{
+
+    from{
+
+        transform:translate(-40px,-20px);
+
+    }
+
+    to{
+
+        transform:translate(40px,30px);
+
+    }
+
+}
+
+/* CONTEÚDO */
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+    position:relative;
+    z-index:2;
+
+    width:min(900px,90%);
+    padding:50px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(8px);
+
+    border:1px solid rgba(212,175,55,.4);
+    border-radius:25px;
+
+    box-shadow:0 0 40px rgba(0,0,0,.4);
+
+    width:min(900px,90%);
+
+    margin:60px auto;
+
+    padding:50px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(212,175,55,.5);
+
+    border-radius:25px;
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:0 0 35px rgba(212,175,55,.15);
+
+}
+
+h1{
+
+font-family:'Cinzel',serif;
+
+font-size:55px;
+
+color:#d4af37;
+
+letter-spacing:3px;
+
+margin-bottom:10px;
+
+}
+
+h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:58px;
+
+color:#f8e6a0;
+
+font-weight:400;
+
+margin-bottom:45px;
+
+}
+
+h3{
+
+font-family:'Cinzel',serif;
+
+font-size:34px;
+
+color:#d4af37;
+
+margin-bottom:15px;
+
+}
+
+.frase{
+
+font-family:'Great Vibes',cursive;
+
+font-size:42px;
+
+color:white;
+
+line-height:1.4;
+
+margin-bottom:35px;
+
+}
+
+.paleta{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+margin-bottom:55px;
+
+}
+
+.cor{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+border:3px solid gold;
+
+box-shadow:0 0 20px rgba(255,215,0,.3);
+
+}
+
+.azul1{background:#74b6ff;}
+.azul2{background:#3f8cff;}
+.azul3{background:#2052d4;}
+.azul4{background:#17336b;}
+.azul5{background:#0a6aa8;}
+
+.formal{
+
+margin-top:20px;
+
+}
+
+.formal p{
+
+color:white;
+
+font-size:28px;
+
+line-height:1.8;
+
+}
+
+.final{
+
+margin:60px 0;
+
+font-family:'Great Vibes',cursive;
+
+font-size:48px;
+
+color:#ffe08c;
+
+line-height:1.5;
+
+text-shadow:0 0 12px rgba(255,215,0,.4);
+
+}
+
+.voltar{
+
+display:inline-block;
+
+padding:16px 35px;
+
+background:linear-gradient(#f8dc8a,#c79c2d);
+
+color:#082b63;
+
+text-decoration:none;
+
+font-weight:bold;
+
+border-radius:40px;
+
+transition:.3s;
+
+}
+
+.voltar:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 25px gold;
+
+}
+</style>
+
 </head>
+
 <body>
-<div class="dresscode">
 
-    <img src="imagens/trajes.png" alt="Dress Code">
+<div id="estrelas"></div>
 
-    <a href="convite.html" class="btn-voltar">
-        ⬅ Voltar ao convite
-    </a>
+<div class="fumaca"></div>
+
+<div class="container">
+
+<h1>👑 DRESS CODE</h1>
+
+<h2>Tipos de traje</h2>
+
+<div class="proibido">
+
+<h3>🚫 É PROIBIDO USAR AZUL</h3>
+
+<p class="frase">
+Para manter a magia da noite,<br>
+evite tons de azul.
+</p>
+
+<div class="paleta">
+
+<div class="cor azul1"></div>
+
+<div class="cor azul2"></div>
+
+<div class="cor azul3"></div>
+
+<div class="cor azul4"></div>
+
+<div class="cor azul5"></div>
 
 </div>
 
+</div>
+
+<div class="formal">
+
+<h3>✨ PREFIRA ROUPAS FORMAIS</h3>
+
+<p>
+
+👗 Vestidos longos ou midi<br>
+🤵 Terno, blazer ou camisa social<br>
+👠 Sapatos elegantes
+
+</p>
+
+</div>
+
+<p class="final">
+
+Sinta-se parte desse conto de fadas<br>
+e viva essa noite mágica!
+
+</p>
+
+<a class="voltar" href="convite.html">
+
+← Voltar ao convite
+
+</a>
+
+</div>
+
+<script>
+
+const estrelas=document.getElementById("estrelas");
+
+for(let i=0;i<150;i++){
+
+    const e=document.createElement("div");
+
+    e.className="estrela";
+
+    e.style.left=Math.random()*100+"vw";
+
+    e.style.top=Math.random()*100+"vh";
+
+    e.style.animationDuration=(2+Math.random()*5)+"s";
+
+    e.style.animationDelay=Math.random()*5+"s";
+
+    e.style.opacity=Math.random();
+
+    estrelas.appendChild(e);
+
+}
+
+</script>
+
 </body>
+
 </html>
